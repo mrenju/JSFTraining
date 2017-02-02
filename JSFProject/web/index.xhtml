@@ -6,7 +6,12 @@
         <title>Home</title>
     </h:head>
     <h:body>
+        <h:graphicImage library="images" name="flower.jpg"></h:graphicImage>
+        <!-- another way would be
+        In the new verison of JSF it identifies resource folder and so library will look for the folder inside
+        the resources folder and in this case, name attribute can be used to specify the filename
         <h:graphicImage value="resources/images/flower.jpg"></h:graphicImage>
+        -->
         <h:form>
             Click button to go to Second page : <h:commandButton value="Hello" action="open"></h:commandButton>
         </h:form>
