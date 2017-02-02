@@ -6,7 +6,9 @@
         <title>Second Page</title>
     </h:head>
     <h:body>
-        Welcome To The Second Page
+        <h:form>
+            Welcome <h:outputText id="opTxt1" value="#{user.name}"/> To The Second Page
+        </h:form>
     </h:body>
 </html>
 

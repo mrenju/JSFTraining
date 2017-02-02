@@ -16,7 +16,9 @@
         <h:graphicImage value="resources/images/flower.jpg"></h:graphicImage>
         -->
         <h:form>
-            Click button to go to Second page : <h:commandButton value="Hello" action="open"></h:commandButton>
+            Click button to go to Second page : <h:commandButton id="cmdbtn1" value="Next" action="open"></h:commandButton>
+            <h:inputText id="ipTxt" value="#{user.name}"/>
+            <h:commandButton id="cmdbtn2" value="Submit" action="Second"></h:commandButton>
         </h:form>
     </h:body>
 </html>
