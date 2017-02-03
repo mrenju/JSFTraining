@@ -28,7 +28,7 @@
                     <h:selectOneMenu id="yesrregform" onchange="submit()" valueChangeListener="#{registrationBean.yearSelectedChanged}">
                         <f:selectItems value="#{registrationBean.year}"/>
                     </h:selectOneMenu>
-                    <h:selectOneMenu id="dayregform">
+                    <h:selectOneMenu id="dayregform" value="#{registrationBean.daySelected}">
                         <f:selectItems value="#{registrationBean.days}"/>
                     </h:selectOneMenu>
                 </h:panelGroup>
@@ -43,7 +43,7 @@
                 </h:selectOneRadio>
                 
                 <h:outputText id="regop4" value="Experience :  "/>
-                <h:selectManyCheckbox id="regcheform" layout="lineDirection" value="#{registrationBean.experience}" >
+                <h:selectManyCheckbox id="regcheform" layout="lineDirection" value="#{registrationBean.experience}">
                     <f:selectItem itemLabel="BSc" id="regc1"/>
                     <f:selectItem itemLabel="MSc" id="regc2"/>
                     <f:selectItem itemLabel="B.Tech" id="regc3"/>
@@ -84,7 +84,7 @@
                 
                 <f:facet name="footer">
                        <h:panelGroup style="display:block; text-align: center">
-                           <h:commandButton value="Submit" id="regfcmd"/>
+                           <h:commandButton value="Submit" id="regfcmd" action="registering"/>
                        </h:panelGroup>
                 </f:facet>
             </h:panelGrid>
