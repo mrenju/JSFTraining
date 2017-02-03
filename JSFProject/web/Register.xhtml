@@ -22,10 +22,10 @@
                 
                 <h:outputText id="regdate" value="Date Of Birth : "/>
                 <h:panelGroup id="pgdate">
-                    <h:selectOneMenu id="monregform">
+                    <h:selectOneMenu id="monregform" onchange="submit()" valueChangeListener="#{registrationBean.monthSelectedChanged}">
                         <f:selectItems value="#{registrationBean.months}"/>
                     </h:selectOneMenu>
-                     <h:selectOneMenu id="yesrregform">
+                    <h:selectOneMenu id="yesrregform" onchange="submit()" valueChangeListener="#{registrationBean.yearSelectedChanged}">
                         <f:selectItems value="#{registrationBean.year}"/>
                     </h:selectOneMenu>
                     <h:selectOneMenu id="dayregform">
