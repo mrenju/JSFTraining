@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Home</title>
         <style>
@@ -17,8 +18,16 @@
         -->
         <h:form>
             Click button to go to Second page : <h:commandButton id="cmdbtn1" value="Next" action="open"></h:commandButton>
+            <br/>
             <h:inputText id="ipTxt" value="#{user.name}"/>
             <h:commandButton id="cmdbtn2" value="Submit" action="Second"></h:commandButton>
+            <br/>
+            <h:inputText id="ipTxt2" value="#{user.name}"/>
+            <h:commandButton id="cmdbtn3" value="Load Value">
+                <f:ajax execute="ipTxt2" render="optxt2"/> <!-- tags starting with f are core jsf tags, to display the o/p without refreshing the page-->
+            </h:commandButton>
+            <br/>
+            <h:outputText id="optxt2" value="#{user.name}"></h:outputText>
         </h:form>
     </h:body>
 </html>
