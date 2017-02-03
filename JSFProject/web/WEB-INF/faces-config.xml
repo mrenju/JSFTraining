@@ -11,4 +11,12 @@
             <redirect/>
         </navigation-case>
     </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/Third.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>loging</from-outcome>
+            <to-view-id>Home.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>
