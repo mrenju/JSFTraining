@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>User Components in JSF</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            TextArea : <h:inputTextarea id="iptxta" label="TextArea"/> <br/>
+            Boolean check box : <h:selectBooleanCheckbox/> <br/>
+            <h:selectManyCheckbox>
+                <f:selectItem itemLabel="Apple"/>
+                <f:selectItem itemLabel="Orange"/>
+                <f:selectItem itemLabel="Grape"/>
+                <f:selectItem itemLabel="Melon"/>
+          </h:selectManyCheckbox> 
+            <h:selectOneRadio> 
+                <f:selectItem itemLabel="Frog" />
+                <f:selectItem itemLabel="Monkey"/>
+                <f:selectItem itemLabel="Zebra"/>
+                <f:selectItem itemLabel="Duck"/>
+            </h:selectOneRadio>
+            <h:selectOneMenu> <!-- Combo box -->
+                <f:selectItem itemLabel="Parrot"/>
+                <f:selectItem itemLabel="Eagle"/>
+                <f:selectItem itemLabel="Ostrich"/>
+                <f:selectItem itemLabel="Sparrow"/>
+            </h:selectOneMenu>
+            <!--
+            <h:selectManyListbox/>
+            <h:selectManyMenu/>
+            <h:selectOneListbox/>
+            
+            
+            -->
+        </h:form>
+    </h:body>
+</html>
+
