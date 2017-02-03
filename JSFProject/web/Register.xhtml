@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Register!</title>
+        <style>
+            .alignstyle>tbody>tr>td {
+                vertical-align: middle;
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <h:form id="regform">
+            <h:panelGrid columns="2" border="0" columnClasses="alignstyle" cellspacing="4">
+                <f:facet name="header">
+                    Login
+                </f:facet>
+                <h:outputText id="regop1" value=" Name :"/>
+                <h:inputText id="regiptxt1" value="#{registrationBean.name}"/>
+                
+                <h:outputText id="regdate" value="Date Of Birth : "/>
+                <h:panelGroup id="pgdate">
+                    <h:selectOneMenu id="monregform">
+                        <f:selectItems value="#{registrationBean.months}"/>
+                    </h:selectOneMenu>
+                     <h:selectOneMenu id="yesrregform">
+                        <f:selectItems value="#{registrationBean.year}"/>
+                    </h:selectOneMenu>
+                    <h:selectOneMenu id="dayregform">
+                        <f:selectItems value="#{registrationBean.days}"/>
+                    </h:selectOneMenu>
+                </h:panelGroup>
+                
+                <h:outputText id="regop2" value="Password : "/>
+                <h:inputSecret id="regiptxt2" value="#{registrationBean.password}"/>
+                
+                <h:outputText id="regop3" value="Gender : "/>
+                <h:selectOneRadio value="#{registrationBean.gender}">
+                    <f:selectItem itemLabel="Male" id="regm"/>
+                    <f:selectItem itemLabel="Female" id="regf"/>
+                </h:selectOneRadio>
+                
+                <h:outputText id="regop4" value="Experience :  "/>
+                <h:selectManyCheckbox id="regcheform" layout="lineDirection" value="#{registrationBean.experience}" >
+                    <f:selectItem itemLabel="BSc" id="regc1"/>
+                    <f:selectItem itemLabel="MSc" id="regc2"/>
+                    <f:selectItem itemLabel="B.Tech" id="regc3"/>
+                    <f:selectItem itemLabel="M.Tech" id="regc4"/>
+                    <f:selectItem itemLabel="BCA" id="regc5"/>
+                    <f:selectItem itemLabel="MCA" id="regc6"/>
+                </h:selectManyCheckbox>
+                
+                <h:outputText id="regop5" value=" Country : "/>
+                <h:selectOneMenu id="regonemenu" value="#{registrationBean.country}" onchange="submit()" valueChangeListener="#{registrationBean.countryChanged}" >
+                    <f:selectItems value="#{registrationBean.allCountries}"/>
+                </h:selectOneMenu>
+               
+                <h:outputText id="regop6" value="City :"/>
+                <h:selectOneRadio value="#{registrationBean.city}" id="regbs1" rendered="#{registrationBean.country == 'India'}">
+                    <f:selectItems value="#{registrationBean.indianCities}"/>
+                </h:selectOneRadio>
+                
+                 <h:selectOneRadio value="#{registrationBean.city}" id="regbs2" rendered="#{registrationBean.country == 'UK'}">
+                     <f:selectItems value="#{registrationBean.ukCities}"/>   
+                </h:selectOneRadio>
+                
+                <h:selectOneRadio value="#{registrationBean.city}" id="regbs3" rendered="#{registrationBean.country == 'China'}">
+                    <f:selectItems value="#{registrationBean.chinaCities}"/>
+                </h:selectOneRadio>
+                
+                <h:selectOneRadio value="#{registrationBean.city}" id="regbs4" rendered="#{registrationBean.country == 'US'}">
+                    <f:selectItems value="#{registrationBean.usCities}"/>
+                </h:selectOneRadio>
+                
+                <h:selectOneRadio value="#{registrationBean.city}" id="regbs5" rendered="#{registrationBean.country == 'New Zealand'}">
+                    <f:selectItems value="#{registrationBean.nzCities}"/>
+                        <f:selectItem itemLabel=""/>
+                </h:selectOneRadio>
+                
+                <h:outputText id="regop7" value="email Id : "/>
+                <h:inputText value="#{registrationBean.email}"/>
+                
+                <f:facet name="footer">
+                       <h:panelGroup style="display:block; text-align: center">
+                           <h:commandButton value="Submit" id="regfcmd"/>
+                       </h:panelGroup>
+                </f:facet>
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+
