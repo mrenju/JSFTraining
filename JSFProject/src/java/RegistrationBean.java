@@ -120,8 +120,6 @@ public class RegistrationBean implements Serializable{
                 case "Sep" :
                 case "Nov" : for(int i = 1; i <= 30; i++) {days.add(i);}
                     break;
-                case "Feb": for(int i = 1; i<= 28; i++) {days.add(i);}
-                    break;
         }
     }
     
@@ -134,6 +132,13 @@ public class RegistrationBean implements Serializable{
             if(this.monthSelected.equals("Feb")) {
                 days.clear();
                 for(int i = 1; i<= 29; i++) {
+                    days.add(i);
+                }
+            }
+        } else {
+            if(this.monthSelected.equals("Feb")) {
+                days.clear();
+                for(int i = 1; i<= 28; i++) {
                     days.add(i);
                 }
             }
